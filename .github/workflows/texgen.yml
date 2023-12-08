@@ -19,7 +19,13 @@ jobs:
           root_file: src.tex
 
       - name: hi
-        run: ls
+        run: |
+          ls
+          git status
+          rm Resume.pdf
+          mv src.pdf Resume.pdf
+          git add Resume.pdf
+        
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
