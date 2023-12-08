@@ -33,10 +33,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-        
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: src.pdf
+          branch: ${{ github.TOKEN }}
