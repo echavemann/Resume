@@ -20,14 +20,14 @@ jobs:
 
       - name: hi
         run: |
-          ls
-          git status
           rm Resume.pdf
           mv src.pdf Resume.pdf
           ls
           git add Resume.pdf
+          git status
+          git commit -m "Updating Resume.pdf"
+          git push
         
-
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
