@@ -24,6 +24,7 @@ jobs:
           git status
           rm Resume.pdf
           mv src.pdf Resume.pdf
+          ls
           git add Resume.pdf
         
 
