@@ -18,7 +18,11 @@ jobs:
         with:
           root_file: src.tex
 
-      - uses: actions/upload-artifact@v3
+      - name: hi
+        run: ls
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
         with:
           name: PDF
           path: src.pdf
