@@ -18,15 +18,22 @@ jobs:
         with:
           root_file: src.tex
 
-      - name: hi
+      - name: Commit Files
         run: |
           rm Resume.pdf
           mv src.pdf Resume.pdf
           ls
           git add Resume.pdf
           git status
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git commit -m "Updating Resume.pdf"
-          git push
+          
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
         
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
